@@ -13,3 +13,32 @@ Input: nums = [1,1,1,1]
 Output: 6
 Explanation: Each pair in the array are good.
 */
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    int a[100], n, count = 0;
+
+    cout<<"enter array size\n";
+    cin>>n;
+
+    cout<<"enter array elements\t";
+    for(int i = 0; i < n; i++)
+        cin>>a[i];
+
+    for(int i = 0; i < (n - 1); i++)
+    {
+        for(int j = i + 1; j < n; j++)
+        {
+            if(a[i] == a[j])
+            {
+                count++;
+                cout<<i<<", "<<j<<endl;
+            }
+        }
+    }
+
+    cout<<count;
+}
