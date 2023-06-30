@@ -15,3 +15,25 @@ Explanation: Details of the tournament:
 - 3rd Round: Teams = 2, Matches = 1, and 1 team is declared the winner.
 Total number of matches = 3 + 2 + 1 = 6.
 */
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    int team_left, match  = 0, team;
+
+    cout<<"Enter no. of team : ";
+    cin>>team;
+    while(team != 1) {
+        if(team % 2 ==0) {
+            match += (team / 2);
+            team = team / 2;
+        } else {
+            match += ((team - 1) / 2);
+            team = ((team - 1) / 2) + 1;
+        }
+    }
+    
+    cout<<match;
+}
