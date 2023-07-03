@@ -22,20 +22,31 @@ using namespace std;
 
 int main()
 {
-    int a[20][20];
-    cout<<"enter array: ";
-    for(int i = 0; i < 5; i++)
+    int a[20][20], count, n=3, m=3, max1 = 0, maxi=0;
+    cout<<"enter array\n";
+    for(int  i = 0; i< n; i++)
     {
-        cin>>a[i];
-    }
-    for(int  i = 0; i< 5; i++)
-    {
-        for( int j = 0; j < 5; j++)
+        for( int j = 0; j < m; j++)
         {
-            if(a[i] == a[j])
-            {
-                cout<<count;
-            }
+           cin>>a[i][j]; 
         }
     }
+    for(int i = 0; i < n; i++)
+    {
+        count = 0;
+        for(int j = 0; j < m; j++)
+        {
+            if(a[i][j] == 1)
+            {
+                count++;
+            }
+        }
+        if(count > max1)
+        {
+            max1 = count;
+            maxi = i;
+        }
+    }
+
+    cout<<maxi<<" "<<max1;
 }
