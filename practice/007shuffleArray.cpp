@@ -8,3 +8,29 @@ Input: nums = [2,5,1,3,4,7], n = 3
 Output: [2,3,5,4,1,7] 
 Explanation: Since x1=2, x2=5, x3=1, y1=3, y2=4, y3=7 then the answer is [2,3,5,4,1,7].
 */
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    int a[50], b[50], n;
+    
+    cout<<"enter array elements: \n";
+    cin>>n;
+    cout<<endl;
+    cout<<"enter array elements :";
+    for(int i = 0; i < n; i++)
+    {
+        cin>>a[i];
+    }
+    for( int j = 0; j < n / 2 ; j++)
+    {
+        b[2 * j] = a[j];
+        b[2 * j + 1] = a[n / 2 + j];
+    }
+    for(int k = 0; k < n; k++)
+    {
+        cout<<b[k]<<" ";
+    }
+}

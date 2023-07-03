@@ -1,6 +1,6 @@
 /*Program to replace spaces with hyphens in a string and print
 the result in near if not perfect square column-wise*/
-package javaApp;
+// package javaApp;
 
 import java.io.IOException;
 import java.util.Scanner;
