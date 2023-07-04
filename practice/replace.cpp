@@ -6,7 +6,8 @@ using namespace std;
 
 int main()
 {
-    string str;
+    string str, a[20][20];
+    int row = 4, column = 4, pos = 0;
 
     cout<<"Enter the string\n";
     getline(cin , str);
@@ -19,5 +20,20 @@ int main()
             str[i] = '_';
         }
     }
-    cout<<str;
+
+    for(int i = 0; i < row; i++)
+    {
+        for(int j = 0; j <  column; j++)
+        {
+                a[j][i] = str[pos++];
+        }
+    }
+    for(int i = 0; i < row; i++)
+    {
+        for(int j = 0; j < column; j++)
+        {
+             cout<<a[j][i];
+        }
+        cout<<endl;
+    }
 }
