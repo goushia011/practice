@@ -19,33 +19,50 @@ Output: false
 
 */
 #include<iostream>
+#include<string>
+#include<map>
 
 using namespace std;
 
 int main()
 {
-    string str;
-    int size, flag = 1;
-
-    cout<<"enter 1st string ";
+    map<char, string> mymap;
+    string pattern, str, temp = "", w = "";
+    int size, flag = 1, si = 0, ei;
+    cout<<"enter the pattern :  ";
+    getline(cin, pattern);
+    cout<<"enter the string : ";
     getline(cin, str);
-    cout<<endl;
-
-    size = str.length();
-
-    for(int i = 0; i < size / 2; i++)
+    
+    for(int i = 0; i < pattern.length(); i++)
     {
-         if(str[i] != str[(size - 1) - i])
-        {
-            flag = 0;
-            break;
-        }
+        ei = str.find(' ', si);
+        if (ei == -1)
+            ei = str.length();
+        w = str.substr(si, ei - si);
+        if(mymap[pattern[i]] == "")
+            mymap[pattern[i]] = w;
+        si = ei + 1;
     }
-    if(flag == 1)
+    map<char, string>::iterator itr;
+    for(itr = mymap.begin(); itr != mymap.end(); itr++)
+    {
+        cout<<itr->first<<" "<<itr->second<<endl;
+    }
+
+    for(int i = 0; i < pattern.length(); i++)
+    {
+        temp = temp + mymap[pattern[i]] + " ";
+    }
+    temp.erase(temp.length() - 1, 1);
+
+    if(str == temp)
     {
         cout<<"true";
     }
     else
-    cout<<"false";
+    {
+        cout<<"false";
     }
+}
    
