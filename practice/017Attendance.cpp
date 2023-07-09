@@ -32,3 +32,44 @@ Output: false
 Explanation: The student was late 3 consecutive days in the last 3 days, so is not eligible for the award.
 
 */
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    string s;
+    int p = 0, a = 0, l = 0, ls = 0, mls = 0;
+
+    cout<<"enter attendence: ";
+    getline(cin, s);
+
+    for(int i = 0; i < s.length(); i++)
+    {
+        if(s[i] == 'A')
+        {
+            a++;
+            ls = 0;
+        }
+        else if (s[i] == 'P')
+        {
+            p++;
+            ls = 0;
+        }
+        else if (s[i] == 'L')
+        {
+            l++;
+            ls++;
+            if(ls > mls)
+                mls = ls;
+        }
+    }
+
+    cout<<p<<" "<<l<<" "<<a<<" "<<mls<<endl;
+    if(a >= 2 || mls >= 3)
+    {
+        cout<<"Not able for award";
+    }
+    else
+        cout<<"Able for award";
+}
