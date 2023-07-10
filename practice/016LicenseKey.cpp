@@ -27,3 +27,49 @@ has 2 characters except the first part as it could be shorter as
 mentioned above.
 
 */
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+string toUpper(string str)
+{
+    for(int i = 0; i < str.length(); i++)
+    {
+        if((int)str[i] >= 97 && (int)str[i] <= 123)
+        {
+            str[i] = (int)str[i] - 32;
+        }
+    }
+    return str;
+}
+
+ int main()
+ {
+    string s, upper, key="";
+    int k, i, j, temp = 0;
+
+    cout<<"enter string: ";
+    getline(cin, s);
+    cout<<"enter k: ";
+    cin>>k;
+    upper = toUpper(s);
+    int size = upper.length();
+
+    for(int i = 0; i < size; i++)
+    {
+        if(upper[i] == '-')
+        {
+            upper.erase(i, 1);
+        }
+    }
+
+    for(int i = upper.length() - 1, h = 1; i >= 0; i--, h++)
+    {
+        key = upper[i] + key;
+        if(h % k == 0 && i != 0)
+            key = "-" + key;
+    }
+    cout<<key;
+ }
+

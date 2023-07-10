@@ -43,3 +43,31 @@ Input: words = ["a"]
 Output: 1
 
 */
+#include<iostream>
+#include<map>
+
+using namespace std;
+
+string morseCode(char ch)
+{
+    string morseCode[26] = {".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..",
+    ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.",
+    "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."};
+    
+    return morseCode[ch - 97];
+}
+
+int main()
+{
+    string s, morse="";
+
+    cout<<"enter string: ";
+    getline(cin, s);
+    
+    for(int i = 0; i < s.length(); i++)
+    {
+        morse = morse + morseCode(s[i]);
+    }
+    cout<<morse;
+}
+

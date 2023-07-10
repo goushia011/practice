@@ -20,3 +20,29 @@ Input: jewels = "z", stones = "ZZ"
 Output: 0
 
 */
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    string s, t;
+    int count = 0;
+
+    cout<<"enter s: ";
+    getline(cin, s);
+    cout<<"enter t: ";
+    getline(cin, t);
+
+    for(int i = 0; i < s.length(); i++)
+    {
+        for(int j = 0; j < t.length(); j++)
+        {
+            if(s[i] == t[j])
+            {
+                count++;
+            }
+        }
+    }
+    cout<<count;
+ }
