@@ -50,31 +50,23 @@ int main()
     {
         if(moves[i] == 'U')
         {
-            x = x + 1;
+            y = y + 1;
         }
         if(moves[i] == 'D')
         {
-            x = x - 1;
+            y = y - 1;
         }
         if(moves[i] == 'R')
         {
-            y = y + 1;
+            x = x + 1;
         }
         if(moves[i] == 'L')
         {
-            y = y - 1;
+            x = x - 1;
         }
-        if(x == y)
-        {
-            flag = 1;
-        }
-        else
-            flag = 0;
     }
-    if(flag == 1)
-    {
+    if(x == 0 && y == 0)
         cout<<"true";
-    }
     else
         cout<<"false";
 }
