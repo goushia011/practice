@@ -34,3 +34,47 @@ left of the origin. We return false because it is not at the origin at
 the end of its moves.
 
 */
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    string moves;
+    int x = 0, y = 0, flag = 0;
+
+    cout<<"enter moves: ";
+    getline(cin, moves);
+
+    for(int i = 0; i < moves.length(); i++)
+    {
+        if(moves[i] == 'U')
+        {
+            x = x + 1;
+        }
+        if(moves[i] == 'D')
+        {
+            x = x - 1;
+        }
+        if(moves[i] == 'R')
+        {
+            y = y + 1;
+        }
+        if(moves[i] == 'L')
+        {
+            y = y - 1;
+        }
+        if(x == y)
+        {
+            flag = 1;
+        }
+        else
+            flag = 0;
+    }
+    if(flag == 1)
+    {
+        cout<<"true";
+    }
+    else
+        cout<<"false";
+}
