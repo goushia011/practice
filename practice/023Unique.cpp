@@ -21,3 +21,42 @@ It does not matter what you leave beyond the returned k (hence they are
 underscores).
 
 */
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+   int a[20], k = 0, size, i, j, temp;
+
+   cout<<"enter size: ";
+   cin>>size;
+
+   cout<<"enter array is: ";
+   for(int i = 0; i < size ; i++)
+   {
+      cin>>a[i];
+   }
+
+   cout<<"array is : ";
+   for(i = 1; i < size; i++)
+   {
+      for(j = 0; j < i ; j++)
+      {
+         if(a[i] == a[j])
+         {
+            temp = a[i];
+            for(int k = i; k < size - 1; k++)
+            {
+               a[k] = a[k + 1];
+            }
+            a[size - 1] = temp;
+            size--;
+         }
+      }
+   }
+   for(int j = 0; j < size; j++)
+   {
+      cout<<a[j]<<" ";
+   }
+}

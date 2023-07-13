@@ -27,3 +27,37 @@ Explanation: In this case, no transactions are done and the
 max profit = 0.
 
 */
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    int a[20], buy = -1, sell = -1, profit = 0, size, k, i;
+
+    cout<<"enter size: ";
+    cin>>size;
+    cout<<"enter array: ";
+    for(int i = 0; i < size; i++)
+    {
+        cin>>a[i];
+    }
+
+    for(i =  0; i < size; i++)
+    {
+        for(int j = i + 1; j < size; j++)
+        {
+            k = a[j] - a[i];
+            if(profit < k)
+            {
+                profit = k;
+                buy = i;
+                sell = j;
+            }
+        }
+    }
+    cout<<"buy on day "<<buy + 1<< " at price "<<a[buy]<<endl;
+    cout<<"sell on day "<<sell + 1<< " at price "<<a[sell]<<endl;
+    cout<<"profit is "<<profit;
+    
+}

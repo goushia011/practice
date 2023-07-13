@@ -20,3 +20,44 @@ It does not matter what you leave beyond the returned k (hence they
 are underscores).
 
 */
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+   int a[20], val, size, temp;
+
+   cout<<"enter size: ";
+   cin>>size;
+
+   cout<<"enter arrray: ";
+   for(int i = 0; i < size; i++)
+   {
+      cin>>a[i];
+   }
+
+   cout<<"enter val: ";
+   cin>>val;
+   cout<<endl;
+
+   cout<<"array is: ";
+   for(int i = 0; i < size; i++)
+   {
+      if(a[i] == val)
+      {
+         temp = a[i];
+         for(int j =i ; j < size - 1; j++)
+         {
+            a[j] = a[j + 1];
+         }
+         a[size - 1] = temp;
+         size--;
+      } 
+   }
+   for(int i = 0; i < size; i++)
+   {
+      cout<<a[i]<<" ";
+   }
+}
+
