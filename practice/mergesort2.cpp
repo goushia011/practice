@@ -29,7 +29,7 @@ using namespace std;
 int main()
 {
     int num1[20], num2[20], merge[40];
-    int size1, size2, size3 , i, j;
+    int size1, size2, size3 , i1 = 0, i2 = 0;
 
     cout<<"enter size1 and size2: ";
     cin>>size1>>size2;
@@ -46,25 +46,17 @@ int main()
         cin>>num2[i];
     }
 
-    for(i = 0; i < size1; i++)
-    {
-        merge[i] = num1[i];
-    }
-    for(i = size1, j = 0; i < size3; i++, j++)
-    {
-        merge[i] = num2[j];
-    }
-
     for(int i = 0; i < size3; i++)
     {
-        for(int j = i + 1; j < size3; j++)
+        if(num1[i1] > num2[i2])
         {
-            if(merge[i] > merge[j])
-            {
-                int temp = merge[i];
-                merge[i] = merge[j];
-                merge[j] = temp;
-            }
+            merge[i] = num2[i2];
+            i2++;
+        }
+        else
+        {
+            merge[i] = num1[i1];
+            i1++;
         }
     }
 
