@@ -9,3 +9,19 @@ Example
 Input: s = "34t"
 Output: Error
 */
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    string s, n;
+
+    cout<<"enter string: ";
+    cin>>s;
+
+    for(int i = 0; i < s.length(); i++)
+    {
+        n = ints[i];
+    }
+}

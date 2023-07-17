@@ -29,3 +29,33 @@ Input: rec1 = [0,0,1,1], rec2 = [2,2,3,3]
 Output: false
 
 */
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    int rect1[4], rect2[4], x, y;
+
+    cout<<"enter first rectangle: ";
+    for(int i = 0; i < 4; i++)
+    {
+        cin>>rec1[i];
+    }
+
+    cout<<"enter second rectangle: ";
+    for(int i = 0; i < 4; i++)
+    {
+        cin>>rec2[i];
+    }
+
+    for(int i = 0; i < 4; i++)
+    {
+        
+    }
+    
+
+    
+
+    
+}

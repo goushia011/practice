@@ -33,28 +33,18 @@ using namespace std;
 
 int main()
 {
-    int coin, temp = 0,j = 0, i;
+    int coin, sum = 0, row = 0;
 
     cout<<"enter no. of coins: ";
     cin>>coin;
 
-    for(i = 0; i <= j; i++)
+    while(sum < coin)
     {
-        for(j = 0; j <= i; j++)
-        {
-            cout<<"* ";
-            coin--;
-            if(j == i)
-            {
-                temp++;
-            }
-            if(coin == 0)
-            {
-                break;
-            }
-        }
-        cout<<endl;
+        sum = (row * (row + 1)) / 2;
+        row++;
     }
-        cout<<temp;
+    row--;
+    if (sum != coin)
+        row--;
+    cout<<row;
 }
-    
