@@ -35,27 +35,43 @@ using namespace std;
 
 int main()
 {
-    int rect1[4], rect2[4], x, y;
+    int rect1[4], rec2[4], flag = 1;
 
-    cout<<"enter first rectangle: ";
+    cout<<"enter 1st rectangle: ";
     for(int i = 0; i < 4; i++)
     {
-        cin>>rec1[i];
-    }
+        cin>>rect1[i];
+    } 
 
-    cout<<"enter second rectangle: ";
+    cout<<"enter 2nd rectangle: ";
     for(int i = 0; i < 4; i++)
     {
         cin>>rec2[i];
-    }
+    } 
 
-    for(int i = 0; i < 4; i++)
+    // chect 1st rectangle w.r.t 2nd rectangle
+    if(rect1[0] >= rec2[2])  //right
     {
-        
+        flag = 0;
     }
-    
+    if(rect1[2] <= rec2[0]) //left
+    {
+        flag = 0;
+    }
+    if(rect1[1] >= rec2[3]) // top
+    {
+        flag = 0;
+    }
 
-    
+    if(rect1[3] <= rec2[1]) // bottom
+    {
+        flag = 0;
+    }
 
-    
+    if(flag == 0)
+    {
+        cout<<"Donot Overlap";
+    }
+    else
+        cout<<"Overlap"; 
 }
