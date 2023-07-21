@@ -39,7 +39,7 @@ public class TheMatrix {
 			}
 			System.out.println();
 		}
-		String cavity = getCavity(matrix);
+		String cavity = getC3avity(matrix);
 		System.out.println(cavity);
 		scanner.close();
 	}
