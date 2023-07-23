@@ -68,6 +68,7 @@ int main()
         }
 
         pos++;
+        // testing
     }
     row++;
 
